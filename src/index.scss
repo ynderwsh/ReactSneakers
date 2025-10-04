@@ -15,7 +15,6 @@ body {
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
   border-radius: 20px;
   max-width: 1080px;
-  margin: 50px auto;
 }
 
 header{
@@ -66,7 +65,7 @@ p{
     border-radius: 8px;
     height: 32px;
     width: 32px;
-    transition: box-shadow 0.2s ease-in-out transform 0.2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out,transform 0.2s ease-in-out;
     cursor: pointer;
   }
   &:hover{
@@ -93,4 +92,103 @@ p{
     font-size: 16px;
     width: 200px;
   }
+}
+
+.shadowOverlay{
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.09);
+  box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.01);
+}
+
+.drawer{
+  position: absolute;
+  width: 420px;
+  right: 0;
+  height: 100%;
+  background: #FFFFFF;
+  box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.01);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  h2{
+  margin: 0;
+  }
+}
+
+.items{
+  flex: 1;
+}
+
+.cartTotalBlock{
+  div{
+    flex: 1;
+    height: 1;
+    border-bottom: 1px dashed #dfdfdf;
+    position: relative;
+    top: -4px;
+    margin: 0 7px;
+  }
+  li{
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  }
+  ul{
+    display: block;
+    margin-bottom: 40px !important;
+  }
+  button{
+    width: 100%;
+    background: #9dd558;
+    height: 55px;
+    border-radius: 18px;
+    border: none;
+    font-weight: 500;
+    font-size: 16px;
+    color: #FFFFFF;
+    cursor: pointer;
+    &:hover{
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.06) ;
+    transform: translateY(-5px);
+  }
+  }
+}
+
+
+.cartItem{
+  border: 1px solid #f3f3f3;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 20px;
+
+  p{
+    font-size: 16px;
+    margin: 0;
+  }
+  b{
+    font-size: 14px;
+  }
+  .CartItem-btn{
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s ease-in-out;
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
+
+
+.cartItem-img{
+  width: 70px;
+  height: 70px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0 10px;
+  margin-right: 20px;
 }
