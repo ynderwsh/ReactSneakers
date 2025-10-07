@@ -11,10 +11,18 @@ body {
 }
 
 .wrapper{
+  align-items: center;
+  margin: 20px auto;
+  max-width: 1080px;
+
+}
+
+.container{
+  display:block;
+  margin: 0;
   background: #FFFFFF;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
   border-radius: 20px;
-  max-width: 1080px;
 }
 
 header{
@@ -94,7 +102,7 @@ p{
   }
 }
 
-.shadowOverlay{
+.oberlay{
   position: absolute;
   right: 0;
   left: 0;
@@ -117,6 +125,10 @@ p{
   flex-direction: column;
   h2{
   margin: 0;
+  }
+  .items{
+    overflow: auto;
+    margin-bottom: 40px;
   }
 }
 
@@ -142,7 +154,28 @@ p{
     display: block;
     margin-bottom: 40px !important;
   }
-  button{
+    img{
+      position: absolute;
+      right: 30px;
+      transition: transform 0.2s ease-in-out;
+    }
+  .greenButton{
+    position: relative;
+    &:hover{
+      img{
+        transform: translateX(5px);
+      }
+    }
+    img{
+      position: absolute;
+      right: 30px;
+      top: 20px;
+      transition: transform 0.15s ease-in-out;
+    }
+  }
+}
+
+.greenButton{
     width: 100%;
     background: #9dd558;
     height: 55px;
@@ -152,11 +185,14 @@ p{
     font-size: 16px;
     color: #FFFFFF;
     cursor: pointer;
+
     &:hover{
     box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.06) ;
-    transform: translateY(-5px);
-  }
-  }
+    background: lighten(#9dd558, 5%);
+    }
+    &:active{
+      background: darken(#9dd558, 5%);
+    }
 }
 
 
